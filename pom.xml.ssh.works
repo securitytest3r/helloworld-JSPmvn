@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.jboss.tools</groupId>
+  <artifactId>helloworld-JSPmvn</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>helloworld-JSPmvn</name>
+  <build>
+    <sourceDirectory>${project.basedir}/src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>${project.basedir}/src</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <warSourceDirectory>${project.basedir}/WebContent</warSourceDirectory>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <source>11</source>
+          <target>11</target>
+        </configuration>
+      </plugin>
+      <plugin>
+          <groupId>org.apache.maven.wagon</groupId>
+          <artifactId>wagon-ssh</artifactId>
+          <version>3.3.4</version>
+	  <configuration>
+              <filename>${project.build.finalName}.war</filename>
+              <hostname>192.168.56.52</hostname>
+              <port>22</port>
+              <username>t1</username>
+              <password>1</password>
+          </configuration>
+      </plugin>
+    </plugins>
+    <extensions>
+        <extension>
+            <groupId>org.apache.maven.wagon</groupId>
+            <artifactId>wagon-ssh</artifactId>
+            <version>3.3.4</version>
+        </extension>
+    </extensions>
+  </build>
+  
+
+<distributionManagement>
+    <repository>
+        <id>releases</id>
+	<url>scp://192.168.56.52/home/t1</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+	<url>scp://192.168.56.52/home/t1</url>
+    </snapshotRepository>
+</distributionManagement>
+</project>
