@@ -2,14 +2,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jboss.tools</groupId>
   <artifactId>helloworld-JSPmvn</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1</version>
   <packaging>war</packaging>
   <name>helloworld-JSPmvn</name>
   <build>
-    <sourceDirectory>${project.basedir}/src</sourceDirectory>
+    <sourceDirectory>${basedir}/src</sourceDirectory>
     <resources>
       <resource>
-        <directory>${project.basedir}/src</directory>
+        <directory>${basedir}/src</directory>
         <excludes>
           <exclude>**/*.java</exclude>
         </excludes>
@@ -20,7 +20,7 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>2.3</version>
         <configuration>
-          <warSourceDirectory>${project.basedir}/WebContent</warSourceDirectory>
+          <warSourceDirectory>${basedir}/WebContent</warSourceDirectory>
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
       </plugin>
@@ -31,18 +31,6 @@
           <source>11</source>
           <target>11</target>
         </configuration>
-      </plugin>
-      <plugin>
-          <groupId>org.wildfly.plugins</groupId>
-          <artifactId>wildfly-maven-plugin</artifactId>
-          <version>1.2.2.Final</version>
-          <configuration>
-              <hostname>192.168.56.52</hostname>
-              <protocol>https-remoting</protocol>
-              <port>9993</port>
-              <username>t1</username>
-              <password>1</password>
-          </configuration>
       </plugin>
     </plugins>
   </build>
