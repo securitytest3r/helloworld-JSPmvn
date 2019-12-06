@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jboss.tools</groupId>
   <artifactId>helloworld-JSPmvn</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version></version>
   <packaging>war</packaging>
   <name>helloworld-JSPmvn</name>
   <build>
