@@ -4,7 +4,9 @@
   <artifactId>helloworld-JSPmvn</artifactId>
   <version>1</version>
   <packaging>war</packaging>
-  <name>helloworld-JSPmvn</name>
+  <name>JSP Hello World test app</name>
+  <url>https://github.com/rsftsi/helloworld-JSPmvn.git</url>
+  <description>Tools used: Eclipse, Git, Jenskins and WildFly</description>
   <build>
     <sourceDirectory>${basedir}/src</sourceDirectory>
     <resources>
