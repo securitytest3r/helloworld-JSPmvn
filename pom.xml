@@ -6,7 +6,7 @@
   <packaging>war</packaging>
   <name>JSP Hello World test app</name>
   <url>https://github.com/rsftsi/helloworld-JSPmvn.git</url>
-  <description>Tools used: Eclipse, Git, Jenskins and WildFly</description>
+  <description>Tools used: Eclipse, Git, Jenskins and WildFly.</description>
   <build>
     <sourceDirectory>${basedir}/src</sourceDirectory>
     <resources>
