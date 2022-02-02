@@ -8,6 +8,6 @@
 <title>Welcome From index.jsp</title></head>
 <body>
 <p>Hello World, from index.jsp</p><br>
-<p>Update 01</p>
+<p>Update 02</p>
 </body>
 </html>
