@@ -12,7 +12,6 @@ pipeline
       steps
 	  {
         sh 'echo "PATH = ${PATH}"'
-        sh 'git clone https://github.com/rsftsi/helloworld-JSPmvn .'
       }
     }
     
