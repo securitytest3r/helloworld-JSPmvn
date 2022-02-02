@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Welcome From index.jsp</title></head>
 <body>
-<p>Hello World, from index.jsp</p>
+<p>Hello World, from index.jsp</p><br>
+<p>Update 01</p>
 </body>
 </html>
