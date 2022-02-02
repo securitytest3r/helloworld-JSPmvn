@@ -1,0 +1,38 @@
+pipeline
+{
+  agent any 
+  tools
+  {
+    maven 'maven'
+  }
+  stages
+  {
+    stage ('Initialize')
+	{
+      steps
+	  {
+        sh 'echo "PATH = ${PATH}"'
+        sh 'git clone https://github.com/rsftsi/helloworld-JSPmvn .'
+      }
+    }
+    
+    stage ('Build')
+	{
+      steps
+	  {
+        sh 'mvn clean package'
+      }
+    }
+	
+    stage ('Deploy-To-Tomcat')
+    {
+        steps
+        {
+            sshagent(['tomcat'])
+            {
+                sh 'scp -o StrictHostKeyChecking=no target/*.war tomcat@192.168.206.133:/var/lib/tomcat9/webapps/helloworld.war'
+            }      
+        }       
+    }
+  }
+}
